@@ -23,7 +23,7 @@ pipeline {
             when {
                 branch 'development'
             }
-            steps: {
+            steps {
                 sh './jenkins/scripts/deliver-for-development.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
