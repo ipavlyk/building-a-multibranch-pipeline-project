@@ -11,7 +11,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './jenkins/scripts/base.sh'
+                sh 'echo "Before npm install"'
+                sh 'npm install'
+                sh 'echo "After npm install"'
             }
         }
         stage('Test') {
@@ -41,4 +43,3 @@ pipeline {
         }
     }
 }
-
