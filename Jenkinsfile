@@ -20,6 +20,11 @@ pipeline {
             steps {
                 sh './jenkins/scripts/test.sh'
             }
+            post {
+                always {
+                    test-results-analyzer './reports/test-result.xml'
+                }
+            }
         }
         stage('Deliver for development') {
             when {
